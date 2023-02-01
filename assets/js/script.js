@@ -71,7 +71,7 @@ $(document).ready(function () {
                     video = `
                     <iframe width="1280" height="720" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
                     `
-                    $("#modal").append(video)
+                    $("#video").append(video)
 
                 });
             })
