@@ -1,0 +1,63 @@
+body {
+  color: white;
+}
+
+#trainer {
+  background-color: red;
+  height: 100vh;
+  background-image: linear-gradient(-135deg, black, red);
+}
+
+#opponent {
+  background-color: blue;
+  height: 100vh;
+  background-image: linear-gradient(-135deg, black, blue);
+}
+
+input {
+  text-align: center;
+}
+
+ .headerForm {
+  background-color: black;
+  transform: skewY(-2deg);
+ }
+
+ #pokemon1, #pokemon2, #info1, #info2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+ }
+
+ #modal {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  background-image: linear-gradient(90deg, red, blue);
+ }
+
+ #VS {
+  position: absolute;
+  color: white;
+  right: 0;
+  left: 0;
+  top: 30%;
+  bottom: 0;
+  margin: auto;
+  font-size: 5rem;
+  font-weight: bolder;
+  font-style: italic;
+ }
+
+ img {
+  width: 50%;
+ }
+
+ #tags {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+ }
