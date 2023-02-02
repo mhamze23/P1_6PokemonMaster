@@ -2,65 +2,32 @@ body {
   color: white;
 }
 
-#trainer {
+#opponent {
   background-color: red;
-  height: 100vh;
   background-image: linear-gradient(-135deg, black, red);
+  min-height: 50em;
 }
 
-#opponent {
+#trainer {
   background-color: blue;
-  height: 100vh;
   background-image: linear-gradient(-135deg, black, blue);
+  min-height: 50em;
 }
 
 input {
   text-align: center;
 }
 
- .headerForm {
+.customRow {
+  height: 7em;
+}
+
+.header {
   background-color: black;
   transform: skewY(-2deg);
- }
+}
 
- #pokemon1, #pokemon2, #info1, #info2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
- }
-
- #modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#modal {
   background-image: linear-gradient(90deg, red, blue);
- }
-
- #VS {
-  position: absolute;
-  color: white;
-  right: 0;
-  left: 0;
-  top: 30%;
-  bottom: 0;
-  margin: auto;
-  font-size: 5rem;
-  font-weight: bolder;
-  font-style: italic;
- }
-
- img {
-  width: 50%;
- }
-
- #tags {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
- }
-
- /* list style and text colour for Jquery autcomplete */
- ul.ui-autocomplete {
-  list-style: none;
+  padding: 3rem;
 }
