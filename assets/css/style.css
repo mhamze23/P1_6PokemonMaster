@@ -59,3 +59,9 @@ input {
   flex-flow: column wrap;
   align-items: center;
  }
+
+ /* list style and text colour for Jquery autcomplete */
+ ul.ui-autocomplete {
+  list-style: none;
+  color:#00993b;
+}
