@@ -31,11 +31,9 @@ input {
  }
 
  #modal {
-  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10rem;
   background-image: linear-gradient(90deg, red, blue);
  }
 
@@ -61,3 +59,8 @@ input {
   flex-flow: column wrap;
   align-items: center;
  }
+
+ /* list style and text colour for Jquery autcomplete */
+ ul.ui-autocomplete {
+  list-style: none;
+}

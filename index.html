@@ -1,93 +1,104 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation Starter Template</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="grid-x text-center">
-      <div class="cell small-6" id="trainer">
-        <div class="grid-y">
-          <div class="cell headerForm">
-            <h1>Trainer</h1>
-            <form>
-              <input type="text" placeholder="..." id="tags">
-            </form>
-          </div>
-          <div class="cell" id="pokemon1">
-            <div class="media-object">
-              <div class="media-object-section">
-                <img src= "./assets/images/pikachu.png">
-              </div>
-            </div>
-          </div>
-          <div class="cell" id="info1">
-            <div class="grid-container">
-              <div class="grid-x grid-margin-x small-1">
-                <div class="cell">
-                  <div class="card">
-                    <div class="card-section">
-                    <h4>This is a row of cards.</h4>
-                      <p>This row of cards is embedded in an X-Y Block Grid.</p>
-                    </div>
-                  </div>
+        <div class="cell small-6" id="trainer">
+            <div class="grid-y">
+                <div class="cell headerForm">
+                    <h1>Trainer</h1>
+                    <form id="form">
+                        <input type="text" autofocus="true" id="pokemon-input">
+                        <input type="submit" id="form">
+                    </form>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>  
-      </div>
-      <div>
-        <h1 id="VS">VS.</h1>
-      </div>
-      <div class="cell small-6" id="opponent">
-        <div class="grid-y">
-          <div class="cell headerForm">
-            <h1>Opponent</h1>
-            <form">
-              <input type="text" placeholder="...">
-            </form>
-          </div>
-          <div class="cell" id="pokemon2">
-            <div class="media-object">
-              <div class="media-object-section middle">
-                <img src= "./assets/images/mew.png">
-              </div>
-            </div>
-          </div>
-          <div class="cell" id="info2">
-            <div class="grid-container">
-              <div class="grid-x grid-margin-x small-up-1">
-                <div class="cell">
-                  <div class="card">
-                    <div class="card-section">
-                    <h4>This is a row of cards.</h4>
-                      <p>This row of cards is embedded in an X-Y Block Grid.</p>
+                <div class="cell" id="pokemon1">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <img src="./assets/images/pikachu.png">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="cell" id="info1">
+                    <div class="grid-container">
+                        <div class="grid-x grid-margin-x small-1">
+                            <div class="cell">
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>This is a row of cards.</h4>
+                                        <p>This row of cards is embedded in an X-Y Block Grid.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div>
+            <h1 id="VS">VS.</h1>
+        </div>
+        <div class="cell small-6" id="opponent">
+            <div class="grid-y">
+                <div class="cell headerForm">
+                    <h1>Opponent</h1>
+                    <form">
+                        <input type="text" placeholder="...">
+                        </form>
+                </div>
+                <div class="cell" id="pokemon2">
+                    <div class="media-object">
+                        <div class="media-object-section middle">
+                            <img src="./assets/images/pikachu.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="cell" id="info2">
+                    <div class="grid-container">
+                        <div class="grid-x grid-margin-x small-up-1">
+                            <div class="cell">
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>This is a row of cards.</h4>
+                                        <p>This row of cards is embedded in an X-Y Block Grid.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="grid-x text-center">
-      <div class="cell">
-        <h1 id="modal">Modal for YouTube</h1>
-      </div>
+    <div class="grid-x text-center" id="modal">
+        <div class="cell">
+            <h1>Modal for YouTube</h1>
+        </div>
+        <div class="video-container">
+            <!-- div for appending iframe window displaying dynamically generated youtube link -->
+            <!-- this can be changed, we can display the video in a modal for example -->
+            <div id="videos">
+            </div>
+        </div>
     </div>
 
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
+        crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
-  </body>
+</body>
 
 </html>
