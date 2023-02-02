@@ -73,7 +73,7 @@ $(document).ready(function () {
                     <iframe width="1280" height="720" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
                     `
                     // #video class location will be where the iframe is appended 
-                    $("#video").append(video)
+                    $("#videos").append(video)
 
                 });
             })
