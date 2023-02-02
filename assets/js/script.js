@@ -186,7 +186,7 @@ $(function () {
   function videoSearch(apiKey, search, maxResults) {
     // dynamically generated URL inputting the API key, max results value (one for now) and
     // the search value (what pokemon was inputted) along with "first appearance in show" for video specificity
-    $.get("https://www.googleapis.com/youtube/v3/search?key=" + apiKey + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search + "first+appearance+in+anime", function (data) {
+    $.get("https://www.googleapis.com/youtube/v3/search?key=" + apiKey + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + search + "pokemon+first+appearance+in+anime", function (data) {
         console.log(data)
 
         // this appends the video (in iframe format) to the div with the id=videos
