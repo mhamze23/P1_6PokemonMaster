@@ -67,6 +67,7 @@ $(document).ready(function () {
                 // at a later date this could be added to a modal?
                 // this method between the back ticks allows us to enter HTML into the JS
                 // this is a quick and dirty way, may be altered in the future
+                // the location of the video being display is WIP
                 data.items.forEach(item => {
                     video = `
                     <iframe width="1280" height="720" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
