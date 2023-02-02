@@ -190,7 +190,7 @@ $(document).ready(function () {
             maxResults +
             "&q=" +
             search +
-            "first+appearance+in+anime", function (data) {
+            "pokemon+first+appearance+in+anime", function (data) {
                 console.log(data)
 
                 // this appends the video (in iframe format) to the div with the id=videos
