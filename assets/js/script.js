@@ -45,7 +45,7 @@ $(document).ready(function () {
         // this will be altered to our counter pokemon name when that var is created
         // still need poke api logic to get that variable/value
         // currently links to the inputted pokemon name, not counter pokemon name like the final product
-        var search = $("#pokemon-input").val()
+        var search = $("#pokemon-input").val().split(" ")[0].trim()
 
         // videoSearch config
         videoSearch(apiKey, search, 1)
