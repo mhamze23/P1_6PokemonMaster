@@ -1,6 +1,10 @@
 $(function () {
   var pokemonInput = $("#pokemon-input");
   var formEl = $("#form");
+  var pokeName1 = $("#pokeName1")[0];
+  var pokeName2 = $("#pokeName2")[0];
+  var pokemonType1 = $("#pokeType1")[0];
+  var pokemonType2 = $("#pokeType2")[0];
 
   var availableTags = {
     "Bulbasaur": null,
@@ -185,115 +189,138 @@ $(function () {
 
 
     function getPokemon() {
-    fetch('https://pokeapi.co/api/v2/pokemon/' + search).then((response) => response.json()).then((data) => {
-      document.querySelector("#pokeName1").innerHTML = data.name.toUpperCase()
-      document.querySelector("#pokemonBox1").innerHTML = data.types[0].type.name.toUpperCase()
-      $("#pokeImage1")[0].src = "./assets/images/" + search + ".png";
+    fetch('https://pokeapi.co/api/v2/pokemon/' + search)
+      .then((response) => response.json())
+      .then((data) => {
 
-      if (data.types[0].type.name==="electric"){
-        $("#pokeImage2")[0].src = "./assets/images/marowak.png";
-        document.querySelector("#pokeName2").innerHTML = "marowak".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "ground".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="rock") {
-    
-        $("#pokeImage2")[0].src = "./assets/images/blastoise.png";
-        document.querySelector("#pokeName2").innerHTML = "blastoise".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "water".toUpperCase() 
-      }   
-      else if (data.types[0].type.name==="water") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/raichu.png";
-        document.querySelector("#pokeName2").innerHTML = "raichu".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "electric".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="grass") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/charizard.png";
-        document.querySelector("#pokeName2").innerHTML = "charizard".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "fire".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="normal") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/machamp.png";
-        document.querySelector("#pokeName2").innerHTML = "machamp".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "fighting".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="fighting") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/mewtwo.png";
-        document.querySelector("#pokeName2").innerHTML = "mewtwo".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "psychic".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="psychic") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/gengar.png";
-        document.querySelector("#pokeName2").innerHTML = "gengar".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "ghost".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="ghost") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/gengar.png";
-        document.querySelector("#pokeName2").innerHTML = "gengar".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "ghost".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="dragon") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/clefairy.png";
-        document.querySelector("#pokeName2").innerHTML = "clefairy".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "fairy".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="fairy") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/arbok.png";
-        document.querySelector("#pokeName2").innerHTML = "arbok".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "poison".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="poison") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/sandslash.png";
-        document.querySelector("#pokeName2").innerHTML = "sandslash".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "ground".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="ground") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/butterfree.png";
-        document.querySelector("#pokeName2").innerHTML = "butterfree".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "bug".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="bug") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/golem.png";
-        document.querySelector("#pokeName2").innerHTML = "golem".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "rock".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="fire") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/gyarados.png";
-        document.querySelector("#pokeName2").innerHTML = "gyarados".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "water".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="flying") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/pikachu.png";
-        document.querySelector("#pokeName2").innerHTML = "pikachu".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "electric".toUpperCase() 
-      }
-      else if (data.types[0].type.name==="ice") {
-        
-        $("#pokeImage2")[0].src = "./assets/images/kabutops.png";
-        document.querySelector("#pokeName2").innerHTML = "kabutops".toUpperCase()
-        document.querySelector("#pokemonBox2").innerHTML = "rock".toUpperCase() 
-      }
-    }).catch((err) => {
-        console.log("Pokemon not found", err)
-    })
+        var pokemonName1 = data.name;
+        var pokemonType1 = data.types[0].type.name;
 
+        var pokemonName1Text = pokemonName1.toUpperCase();
+        var pokemonType1Text = pokemonType1.toUpperCase();
+
+        pokeName1.innerHTML = pokemonName1Text;
+        pokeType1.innerHTML = pokemonType1Text
+
+        $("#pokeImage1")[0].src = "./assets/images/" + pokemonType1 + "/" + pokemonName1 + ".png";
+
+        if (pokemonType1 === "electric" || pokemonType1 === "poison") {
+
+          var image_array = ["cubone.png", "diglett.png", "dugtrio.png", "marowak.png", "rhydon.png", "rhyhorn.png", "sandshrew.png", "sandslash.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/ground/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "ground".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "rock" || pokemonType1 === "fire") {
+
+          var image_array = ["blastoise.png", "cloyster.png", "goldeen.png", "golduck.png", "gyarados.png", "horsea.png", "kingsler.png", "krabby.png", "lapras.png", "magikarp.png", "poliwag.png", "poliwhirl.png", "poliwrath.png", "psyduck.png", "seadra.png", "seaking.png", "seel.png", "shellder.png", "slowbro.png", "slowpoke.png", "squirtle.png", "starmie.png", "staryu.png", "tentacool.png", "tentacruel.png", "vaporeon.png", "wartortle.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/water/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "water".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "water") {
+            
+          var image_array = ["electrobuzz.png", "electrode.png", "jolteon.png", "magnemite.png", "magneton.png", "pikachu.png", "raichu.png", "voltorb.png", "zapdos.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/electric/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "electric".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "grass" || pokemonType1 === "ice") {
+            
+          var image_array = ["arcanine.png", "charizard.png", "charmander.png", "charmeleon.png", "flareon.png", "growlithe.png", "magmar.png", "moltres.png", "ninetales.png", "ponyta.png", "rapidash.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/fire/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "fire".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "normal") {
+            
+          var image_array = ["hitmonchan.png", "hitmonlee.png", "machoke.png", "machop.png", "mankey.png", "primeape.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/fighting/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "fighting".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "fighting") {
+          
+          var image_array = ["abra.png", "alakazam.png", "drowzee.png", "hypno.png", "kadabra.png", "mew.png", "mewtwo.png", "mr-mime.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/psychic/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "psychic".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "psychic" || pokemonType1 === "ghost") {
+
+          var image_array = ["gastly.png", "gengar.png", "haunter.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/ghost/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "ghost".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "dragon") {
+            
+          var image_array = ["clefable.png", "clefairy.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/fairy/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "fairy".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "fairy") {
+            
+          var image_array = ["arbok.png", "ekans.png", "golbat.png", "grimer.png", "koffing.png", "muk.png", "nidoking.png", "nidoqueen.png", "nidoran-f.png", "nidoran-m.png", "nidorina.png", "nidorino.png", "weezing.png", "zubat.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/poison/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "poison".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        } else if (pokemonType1 === "ground") {
+            
+          var image_array = ["beedrill.png", "butterfree.png", "caterpie.png", "kakuna.png", "metapod.png", "paras.png", "parasect.png", "pinsir.png", "scyther.png", "venomoth.png", "venonat.png", "weedle.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/bug/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "bug".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+        
+        } else if (pokemonType1 === "bug") {
+            
+          var image_array = ["aerodactyl.jpg", "geodude.png", "golem.png", "graveler.png", "kabuto.png", "kabutops.png", "omanyte.png", "omastar.png", "onix.png"];
+          var random_index = Math.floor(Math.random() * image_array.length);
+          var selected_image = image_array[random_index];
+          $("#pokeImage2")[0].src = "./assets/images/rock/" + selected_image;
+          var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase()
+          pokeName2.innerHTML = pokemonName2Text;
+          pokemonType2.innerHTML = pokemonName1Text + " is weak against " + "rock".toUpperCase() + "-TYPE pokemons like " + pokemonName2Text;
+
+        }
+      }).catch((err) => {
+          console.log("Pokemon not found", err)
+      })
     }
     
     getPokemon()
-  
-    
   })
 
   function videoSearch(apiKey, search, maxResults) {
