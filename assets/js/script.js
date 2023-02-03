@@ -279,6 +279,12 @@ $(function () {
         document.querySelector("#pokeName2").innerHTML = "pikachu".toUpperCase()
         document.querySelector("#pokemonBox2").innerHTML = "electric".toUpperCase() 
       }
+      else if (data.types[0].type.name==="ice") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/kabutops.png";
+        document.querySelector("#pokeName2").innerHTML = "kabutops".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "rock".toUpperCase() 
+      }
     }).catch((err) => {
         console.log("Pokemon not found", err)
     })
