@@ -1,5 +1,4 @@
 $(function () {
-
   var pokemonInput = $("#pokemon-input");
   var formEl = $("#form");
 
@@ -172,15 +171,123 @@ $(function () {
   formEl.submit(function (event) {
     event.preventDefault()
     // for debugging purposes, confirms a form is submitted
-    alert("form is submitted")
+    //alert("form is submitted")//
 
     // this will be altered to our counter pokemon name when that var is created
     // still need poke api logic to get that variable/value
     // currently links to the inputted pokemon name, not counter pokemon name like the final product
-    var search = pokemonInput.val().split(" ")[0].trim()
+    var search = pokemonInput.val().split(" ")[0].trim().toLowerCase()
+    console.log(search)
 
     // videoSearch config
     videoSearch(apiKey, search, 1)
+    //document.querySelector("#search").addEventListener("click", getPokemon);//
+
+
+    function getPokemon() {
+    fetch('https://pokeapi.co/api/v2/pokemon/' + search).then((response) => response.json()).then((data) => {
+      document.querySelector("#pokeName1").innerHTML = data.name.toUpperCase()
+      document.querySelector("#pokemonBox1").innerHTML = data.types[0].type.name.toUpperCase()
+      $("#pokeImage1")[0].src = "./assets/images/" + search + ".png";
+
+      if (data.types[0].type.name==="electric"){
+        $("#pokeImage2")[0].src = "./assets/images/marowak.png";
+        document.querySelector("#pokeName2").innerHTML = "marowak".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "ground".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="rock") {
+    
+        $("#pokeImage2")[0].src = "./assets/images/blastoise.png";
+        document.querySelector("#pokeName2").innerHTML = "blastoise".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "water".toUpperCase() 
+      }   
+      else if (data.types[0].type.name==="water") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/raichu.png";
+        document.querySelector("#pokeName2").innerHTML = "raichu".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "electric".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="grass") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/charizard.png";
+        document.querySelector("#pokeName2").innerHTML = "charizard".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "fire".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="normal") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/machamp.png";
+        document.querySelector("#pokeName2").innerHTML = "machamp".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "fighting".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="fighting") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/mewtwo.png";
+        document.querySelector("#pokeName2").innerHTML = "mewtwo".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "psychic".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="psychic") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/gengar.png";
+        document.querySelector("#pokeName2").innerHTML = "gengar".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "ghost".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="ghost") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/gengar.png";
+        document.querySelector("#pokeName2").innerHTML = "gengar".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "ghost".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="dragon") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/clefairy.png";
+        document.querySelector("#pokeName2").innerHTML = "clefairy".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "fairy".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="fairy") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/arbok.png";
+        document.querySelector("#pokeName2").innerHTML = "arbok".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "poison".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="poison") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/sandslash.png";
+        document.querySelector("#pokeName2").innerHTML = "sandslash".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "ground".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="ground") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/butterfree.png";
+        document.querySelector("#pokeName2").innerHTML = "butterfree".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "bug".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="bug") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/golem.png";
+        document.querySelector("#pokeName2").innerHTML = "golem".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "rock".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="fire") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/gyarados.png";
+        document.querySelector("#pokeName2").innerHTML = "gyarados".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "water".toUpperCase() 
+      }
+      else if (data.types[0].type.name==="flying") {
+        
+        $("#pokeImage2")[0].src = "./assets/images/pikachu.png";
+        document.querySelector("#pokeName2").innerHTML = "pikachu".toUpperCase()
+        document.querySelector("#pokemonBox2").innerHTML = "electric".toUpperCase() 
+      }
+    }).catch((err) => {
+        console.log("Pokemon not found", err)
+    })
+
+    }
+    
+    getPokemon()
+  
+    
   })
 
   function videoSearch(apiKey, search, maxResults) {
