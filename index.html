@@ -13,23 +13,24 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col m6 center-align" id="opponent">
+            <div class="col s12 m6 center-align" id="opponent">
                 <div class="row header">
                     <h1>Opponent</h1>
                 </div>
+                <div class="row customRow"></div>
                 <div class="row customRow">
-                    <form class="input-field col s4 offset-s4" id="form">
+                    <form class="input-field col s12 m4 offset-m4" id="form">
                         <input type="text" class="autocomplete white-text" id="pokemon-input">
                         <label for="autocomplete">Pokemon</label>
                         <input class="btn" type="submit">
                     </form>
                 </div>
-                <div class="col s4 offset-s4" id="pokemon1">
+                <div class="col s12 m4 offset-s4 offset-m4" id="pokemon1">
                     <img id="pokeImage1" class="responsive-img" src="" alt="">
                 </div>
                 
                 <div class="row customRow"></div>
-                <div class="col s6 offset-s3 card" id="info1">
+                <div class="col s12 m6 offset-m3 card" id="info1">
                     <div class="card-content black-text flow-text">
                       <span id="pokeName1" class="card-title">Name</span>
                       <p id="pokeType1">Type</p>
@@ -38,53 +39,45 @@
                     </div>
                 </div>
             </div>
-            <div class="col m6 center-align" id="trainer">
+
+            <div class="col s12 m6 center-align" id="trainer">
                 <div class="row header">
                     <h1>Trainer</h1>
                 </div>
                 <div class="row customRow"></div>
-                <div class="col s4 offset-s4" id="pokemon2">
-                    <img id="pokeImage2" class="responsive-img" src="" alt="">
-                </div>
                 <div class="row customRow"></div>
-                <div class="col s6 offset-s3 card" id="info2">
-                    <div class="card-content black-text flow-text">
-                      <span class="card-title" id="shout"></span>
-                      <p id="pokeName2"></p>
-                      <p id="pokeType2"></p>
+                    <div class="col s12 m4 offset-m4" id="pokemon2">
+                        <img id="pokeImage2" class="responsive-img" src="" alt="">
+                    </div>
+                <div class="row customRow"></div>
+                    <div class="col s12 m6 offset-m3 card" id="info2">
+                        <div class="card-content black-text flow-text">
+                        <span class="card-title" id="shout"></span>
+                        <p id="pokeName2"></p>
+                        <p id="pokeType2"></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row" id="modal">
-                <div class="col s12 center-align">
-                    <h1>In Fond Memories of Ash Ketchum and Pikachu</h1>
-<!--                     <div class="audio-container">
+                <div class="row" id="modal">
+                    <div class="col s12 center-align">
+                        <h1>In Fond Memories of Ash Ketchum and Pikachu</h1>
+                    </div>
+            <!--     <div class="audio-container">
                         <audio controls autoplay>
-                          <source src="./assets/sound/Pokemon.ogg" type="audio/mpeg"/>
+                            <source src="./assets/sound/Pokemon.ogg" type="audio/mpeg"/>
                         </audio>
                     </div> -->
                     <div class="row" id="history">
-                        <div id="pokemonBtns"></div>
+                        <div class="center-align" id="pokemonBtns"></div>
                     </div>
                     <div class="row">
                         <!-- EXAMPLE HOW VIDEO CONTAINER WORKS -->
-                    <div class="video-container">
-                        <div id="videos">
-                            <!-- <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe> -->
+                        <div class="video-container">
+                            <div id="videos"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- SIMILAR TO YOUR ORIGINAL -->
-            <!-- <div class="col"> -->    
-                <!-- div for appending iframe window displaying dynamically generated youtube link -->
-                <!-- this can be changed, we can display the video in a modal for example -->
-                <!-- <div class="video-container" id="videos"></div> -->
-                <!-- </div> -->
-            <!-- </div> -->
         </div>
     </div>
                 
