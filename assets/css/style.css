@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
   color: white;
 }
@@ -5,13 +10,13 @@ body {
 #opponent {
   background-color: red;
   background-image: linear-gradient(-135deg, black, red);
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
 #trainer {
   background-color: blue;
   background-image: linear-gradient(-135deg, black, blue);
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
 input {
@@ -34,4 +39,8 @@ input {
 
 .video-container {
   display: none;
+}
+
+.btn {
+  margin: 1rem;
 }

@@ -1,10 +1,15 @@
 $(function () {
+
+  localStorage.clear();
+
   var pokemonInput = $("#pokemon-input");
   var formEl = $("#form");
   var pokeName1 = $("#pokeName1")[0];
   var pokeName2 = $("#pokeName2")[0];
   var pokemonType2 = $("#pokeType2")[0];
   var weaknessListEl = $("#weaknessList");
+  var pokemonBtns = $("#pokemonBtns");
+  var history = $("#history");
 
   var availableTags = {
     "Bulbasaur": null,
@@ -160,6 +165,29 @@ $(function () {
     "Mew": null,
   };
 
+    // getting stuff from local storage for pokemon
+  var pokemonStorage = localStorage.getItem("pokemon");
+
+    // create or add to an array
+  if (pokemonStorage) {
+    pokemonStorage = JSON.parse(pokemonStorage)
+  } else {
+    pokemonStorage = [];
+  }
+  
+  // create a button if city name exists using the function findCoordinates
+  pokemonStorage.forEach(createBtn);
+
+  // create buttons for the existing cities
+  function createBtn(pokemon) {
+    var btn = $("<button>", {
+      text: pokemon
+    });
+      
+    btn.addClass("btn ");
+    pokemonBtns.prepend(btn);
+  }
+
   // Input Autocomplete Feature
   pokemonInput.autocomplete({
     data: availableTags,
@@ -167,7 +195,7 @@ $(function () {
   });
 
   // api key
-  var apiKey = "AIzaSyDpIsEfsOATGMkGETPLfcEFxlNejI9U-5s";
+  var apiKey = "AIzaSyAaVfO_wyq9c3hNxgESz04Z_kqAQnoVSCg";
   // video is an empty string to start, will be generated
   var video = '';
 
@@ -175,6 +203,7 @@ $(function () {
   formEl.submit(function (event) {
     event.preventDefault()
     var search = pokemonInput.val().split(" ")[0].trim().toLowerCase()
+
     // for debugging purposes, confirms a form is submitted
     //alert("form is submitted")//
 
@@ -183,7 +212,7 @@ $(function () {
     // currently links to the inputted pokemon name, not counter pokemon name like the final product
 
     // videoSearch config
-    videoSearch(apiKey, search, 1)
+    // videoSearch(apiKey, search, 1)
 
     function getPokemon() {
     fetch('https://pokeapi.co/api/v2/pokemon/' + search)
@@ -196,6 +225,12 @@ $(function () {
         var pokemonName1Text = pokemonName1.toUpperCase();
         var pokemonType1Text = "Type: " + pokemonType1.toUpperCase();
         $("#pokeImage1")[0].src = "./assets/images/" + pokemonType1 + "/" + pokemonName1 + ".png";
+
+        if (pokemonName1Text && pokemonStorage.includes(pokemonName1Text) === false) {
+          createBtn(pokemonName1Text);
+          pokemonStorage.push(pokemonName1Text);
+          localStorage.setItem("pokemon", JSON.stringify(pokemonStorage));
+        }
 
         pokeName1.innerHTML = pokemonName1Text;
         pokeType1.innerHTML = pokemonType1Text
@@ -480,6 +515,13 @@ $(function () {
     var pokemonName2Text = selected_image.substring(0, selected_image.lastIndexOf('.')).toUpperCase();
     pokeName2.innerHTML = pokemonName2Text + "!";
     pokemonType2.innerHTML = "Type: " + weaknessType[weaknessIndex].toUpperCase();
+
+    if (pokemonName2Text && pokemonStorage.includes(pokemonName2Text) === false) {
+      createBtn(pokemonName2Text);
+      pokemonStorage.push(pokemonName2Text);
+      localStorage.setItem("pokemon", JSON.stringify(pokemonStorage));
+    }
+
     emptyList(weaknessListEl);
     listWeakness(weaknessListEl, weaknessType);
     videoSearch(apiKey, pokemonName2Text, 1);
@@ -487,7 +529,6 @@ $(function () {
     });
   };
   
-
   function listWeakness(list, items) {
     for (var i = 0; i < items.length; i++) {
       list.append('<li>' + items[i].toUpperCase() + '</li>');;
@@ -496,6 +537,16 @@ $(function () {
 
   function emptyList(list) {
     list.empty();
+  }
+
+  // click event to search the same city again if button are created already
+  history.on('click', searchAgain)
+
+  // function to search the city with its own button
+  function searchAgain(event) {
+    event.preventDefault();
+    var apiKey = "AIzaSyAaVfO_wyq9c3hNxgESz04Z_kqAQnoVSCg";
+    videoSearch(apiKey, event.target.innerHTML, 1)
   }
 
   function videoSearch(apiKey, search, maxResults) {
