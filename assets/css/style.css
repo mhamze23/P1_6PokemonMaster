@@ -36,6 +36,10 @@ input {
   display: none;
 }
 
+.btn {
+  margin: 1em;
+}
+
 .row, .col {
   padding: 0;
   margin-bottom: 0;
