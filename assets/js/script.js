@@ -246,14 +246,14 @@ $(function () {
     .then((response) => response.json())
     .then((data) => {
       
-    var waterImages = ["blastoise.png", "cloyster.png", "goldeen.png", "golduck.png", "gyarados.png", "horsea.png", "kingler.png", "krabby.png", "lapras.png", "magikarp.png", "poliwag.png", "poliwhirl.png", "poliwrath.png", "psyduck.png", "seadra.png", "seaking.png", "seel.png", "shellder.png", "slowbro.png", "slowpoke.png", "squirtle.png", "starmie.png", "staryu.png", "tentacool.png", "tentacruel.png", "vaporeon.png", "wartortle.png"];
+    var waterImages = ["blastoise.png", "cloyster.png", "dewgong.png", "goldeen.png", "golduck.png", "gyarados.png", "horsea.png", "kingler.png", "krabby.png", "lapras.png", "magikarp.png", "poliwag.png", "poliwhirl.png", "poliwrath.png", "psyduck.png", "seadra.png", "seaking.png", "seel.png", "shellder.png", "slowbro.png", "slowpoke.png", "squirtle.png", "starmie.png", "staryu.png", "tentacool.png", "tentacruel.png", "vaporeon.png", "wartortle.png"];
     var grassImages = ["bellsprout.png", "bulbasaur.png", "exeggcute.png", "exeggutor.png", "gloom.png", "ivysaur.png", "oddish.png", "tangela.png", "venusaur.png", "victreebel.png", "vileplume.png", "weepinbell.png"];
     var electricImages = ["electabuzz.png", "electrode.png", "jolteon.png", "magnemite.png", "magneton.png", "pikachu.png", "raichu.png", "voltorb.png", "zapdos.png"];
     var poisonImages = ["arbok.png", "ekans.png", "golbat.png", "grimer.png", "koffing.png", "muk.png", "nidoking.png", "nidoqueen.png", "nidoran-f.png", "nidoran-m.png", "nidorina.png", "nidorino.png", "weezing.png", "zubat.png"];
     var bugImages = ["beedrill.png", "butterfree.png", "caterpie.png", "kakuna.png", "metapod.png", "paras.png", "parasect.png", "pinsir.png", "scyther.png", "venomoth.png", "venonat.png", "weedle.png"];
     var ghostImages = ["gastly.png", "gengar.png", "haunter.png"];
     var psychicImages = ["abra.png", "alakazam.png", "drowzee.png", "hypno.png", "kadabra.png", "mew.png", "mewtwo.png", "mr-mime.png"];
-    var iceImages = ["articuno.png", "dewgong.png", "jynx.png"];
+    var iceImages = ["articuno.png",  "jynx.png"];
     var dragonImages = ["dragonair.png", "dragonite.png", "dratini.png"];
     var fairyImages = ["clefable.png", "clefairy.png"];
     var groundImages = ["cubone.png", "diglett.png", "dugtrio.png", "marowak.png", "rhydon.png", "rhyhorn.png", "sandshrew.png", "sandslash.png"];
