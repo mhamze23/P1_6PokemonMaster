@@ -202,7 +202,6 @@ $(function () {
   // submit event listener
   formEl.submit(function (event) {
     event.preventDefault()
-    formEl.addClass("hide");
     var search = pokemonInput.val().split(" ")[0].trim().toLowerCase()
 
     // for debugging purposes, confirms a form is submitted
