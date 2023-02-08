@@ -20,15 +20,27 @@
                 <div class="row customRow"></div>
                 <div class="row customRow">
                     <form class="input-field col s12 m4 offset-m4" id="form">
-                        <input type="text" class="autocomplete white-text" id="pokemon-input">
+                        <input type="text" class="autocomplete white-text validate" id="pokemon-input">
                         <label for="autocomplete">Pokemon</label>
-                        <input class="btn" type="submit">
+                        <button data-target="modal1" class="btn modal-trigger" type="submit">Submit</button>
                     </form>
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                          <h4>Error</h4>
+                          <ul class="collection" id="uniqueList">
+                            <li class="collection-item" id="error1">Might have been empty, </li>
+                            <li class="collection-item" id="error2">Might have been spelt incorrectly, or</li>
+                            <li class="collection-item" id="error3">Might not be a Pokemon from the 1<sup>st</sup> Generation</li>
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#form" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col s12 m4 offset-m4" id="pokemon1">
                     <img id="pokeImage1" class="responsive-img" src="" alt="">
                 </div>
-                
                 <div class="row customRow"></div>
                 <div class="col s12 m6 offset-m3 card" id="info1">
                     <div class="card-content black-text flow-text">

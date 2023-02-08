@@ -165,7 +165,11 @@ $(function () {
     "Mew": null,
   };
 
-    // getting stuff from local storage for pokemon
+  // $("#dialog").dialog({
+  //   autoOpen: false
+  // })
+
+  // getting stuff from local storage for pokemon
   var pokemonStorage = localStorage.getItem("pokemon");
 
     // create or add to an array
@@ -184,7 +188,7 @@ $(function () {
       text: pokemon
     });
       
-    btn.addClass("btn ");
+    btn.addClass("btn");
     pokemonBtns.prepend(btn);
   }
 
@@ -199,48 +203,70 @@ $(function () {
   // video is an empty string to start, will be generated
   var video = '';
 
+  function invalidAlert() {
+    $("#modal1").modal()
+  }
+
   // submit event listener
   formEl.submit(function (event) {
-    event.preventDefault()
-    var search = pokemonInput.val().split(" ")[0].trim().toLowerCase()
+    event.preventDefault();
 
-    // for debugging purposes, confirms a form is submitted
-    //alert("form is submitted")//
+    if (pokemonInput.val() === "" || pokemonInput.val() === null) {
+      invalidAlert();
+      pokemonInput.val("")
+    } else {
+      var search = pokemonInput.val().split(" ")[0].trim().toLowerCase()
+      gen1Pokemon(search);
+      pokemonInput.val("")
+    }
+  });
 
-    // this will be altered to our counter pokemon name when that var is created
-    // still need poke api logic to get that variable/value
-    // currently links to the inputted pokemon name, not counter pokemon name like the final product
+  function gen1Pokemon(search) {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+      .then((response) => response.json())
+      .then((data) => {
+        nameArray = [];
+        for (var i = 0; i < 151; i++) {
+          nameArray[i] = data.results[i].name;
+        }
 
-    // videoSearch config
-    // videoSearch(apiKey, search, 1)
+        if (nameArray.includes(search) === true) {
+          getPokemon(search);
+        } else {
+          invalidAlert();
+        }
+    })
+  }
 
-    function getPokemon() {
+  
+  function getPokemon(search) {
     fetch('https://pokeapi.co/api/v2/pokemon/' + search)
       .then((response) => response.json())
       .then((data) => {
 
-        var pokemonName1 = data.name;
-        var pokemonType1 = data.types[0].type.name;
-        
+      var pokemonName1 = data.name;
+      var pokemonType1 = data.types[0].type.name;
+      
         var pokemonName1Text = pokemonName1.toUpperCase();
         var pokemonType1Text = "Type: " + pokemonType1.toUpperCase();
         $("#pokeImage1")[0].src = "./assets/images/" + pokemonType1 + "/" + pokemonName1 + ".png";
-
+  
         if (pokemonName1Text && pokemonStorage.includes(pokemonName1Text) === false) {
           createBtn(pokemonName1Text);
           pokemonStorage.push(pokemonName1Text);
           localStorage.setItem("pokemon", JSON.stringify(pokemonStorage));
-        }
 
+  
         pokeName1.innerHTML = pokemonName1Text;
         pokeType1.innerHTML = pokemonType1Text
-
-        findWeakness(pokemonType1);
-      });
-    };
-    getPokemon();
-  });
   
+        findWeakness(pokemonType1);
+      } else {
+        invalidAlert();
+      }
+    });
+  };
+
   function findWeakness(pokemonType1) {
     fetch('https://pokeapi.co/api/v2/type/' + pokemonType1)
     .then((response) => response.json())
@@ -538,6 +564,7 @@ $(function () {
   function emptyList(list) {
     list.empty();
   }
+
 
   // click event to search the same city again if button are created already
   history.on('click', searchAgain)

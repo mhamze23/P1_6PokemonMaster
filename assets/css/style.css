@@ -5,13 +5,13 @@ body {
 #opponent {
   background-color: red;
   background-image: linear-gradient(-135deg, black, red);
-  min-height: 1000px;
+  min-height: 1200px;
 }
 
 #trainer {
   background-color: blue;
   background-image: linear-gradient(-135deg, black, blue);
-  min-height: 1000px;
+  min-height: 1200px;
 }
 
 input {
@@ -45,3 +45,10 @@ input {
   margin-bottom: 0;
 }
 
+.modal {
+  color: black;
+}
+
+.bolder {
+  text-transform: capitalize;
+}
