@@ -193,7 +193,7 @@ $(function () {
   });
 
   // api key
-  var apiKey = "AIzaSyAaVfO_wyq9c3hNxgESz04Z_kqAQnoVSCg";
+  var apiKey = "AIzaSyDafs9W3jhBLLX0VMFVj-pcOCzNMwUdNiw";
   // video is an empty string to start, will be generated
   var video = '';
 
