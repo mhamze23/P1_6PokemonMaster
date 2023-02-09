@@ -21,12 +21,14 @@ SO I can win the battle.
 ```
 
 ## Technologies Used:
+```
 Jquery/JqueryUI
 Vanilla JavaScript
 Vanilla CSS
 Materialize Framework
 PokeAPI: https://pokeapi.co/
 YouTube Data API v3: https://developers.google.com/youtube/v3/docs/search
+```
 
 ## Acceptance Criteria:
 ```md
