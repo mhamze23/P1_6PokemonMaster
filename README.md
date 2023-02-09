@@ -43,5 +43,8 @@ WHEN I click them.
 THEN I am shown the previous video.
 ```
 
-Screenshots
-[Insert Screenshots or GIF] WIP
+## Screenshots:
+![Pokemon Battle](./assets/images/demo.gif)
+
+## Link to deployed app:
+https://ashketchumandpikachu.github.io/PokemonBattle/
