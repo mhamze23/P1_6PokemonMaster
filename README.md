@@ -40,7 +40,7 @@ THEN I am presented with the Pokémon of my choice, name, type, weaknesses and a
 WHEN I want to be able to refer back to the search I initiated.
 GIVEN buttons to store history.
 WHEN I click them.
-THEN I am shown the results of previous searches.
+THEN I am shown the previous video.
 ```
 
 Screenshots
