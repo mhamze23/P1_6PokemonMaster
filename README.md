@@ -14,7 +14,7 @@ Nonetheless, a clip will be at the bottom of the screen to support the
 request.
 
 ## User Story:
-```
+```md
 AS a Pokémon fan 
 I WANT to know information about a Pokémon and the best adversary 
 SO I can win the battle.
@@ -29,7 +29,7 @@ PokeAPI: https://pokeapi.co/
 YouTube Data API v3: https://developers.google.com/youtube/v3/docs/search
 
 ## Acceptance Criteria:
-```
+```md
 I WANT to be able to search for a Pokémon.
 GIVEN that the Pokémon is generated
 I WANT to be able to write the first 3 letters.
