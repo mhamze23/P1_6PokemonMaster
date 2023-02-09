@@ -543,7 +543,7 @@ $(function () {
   // function to search the city with its own button
   function searchAgain(event) {
     event.preventDefault();
-    var apiKey = "AIzaSyAaVfO_wyq9c3hNxgESz04Z_kqAQnoVSCg";
+    var apiKey = "AIzaSyDafs9W3jhBLLX0VMFVj-pcOCzNMwUdNiw";
     videoSearch(apiKey, event.target.innerHTML, 1)
   }
 
