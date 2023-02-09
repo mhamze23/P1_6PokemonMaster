@@ -52,3 +52,7 @@ input {
 .bolder {
   text-transform: capitalize;
 }
+
+.modal-close {
+  color: red;
+}
