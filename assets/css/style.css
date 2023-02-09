@@ -1,0 +1,64 @@
+body {
+  color: white;
+}
+
+#opponent {
+  background-color: red;
+  background-image: linear-gradient(-135deg, black, red);
+  min-height: 1200px;
+}
+
+#trainer {
+  background-color: blue;
+  background-image: linear-gradient(-135deg, black, blue);
+  min-height: 1200px;
+}
+
+input {
+  text-align: center;
+}
+
+.customRow {
+  height: 7em;
+}
+
+.header {
+  background-color: black;
+  transform: skewY(-2deg);
+}
+
+#modal {
+  background-image: linear-gradient(90deg, red, blue);
+  height: max-content;
+}
+
+.video-container {
+  display: none;
+}
+
+.btn {
+  margin: 1em;
+}
+
+.row, .col {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.modal {
+  color: black;
+}
+
+.bolder {
+  text-transform: capitalize;
+}
+
+.modal-close {
+  color: red;
+}
+
+.modal {
+  background-color: rgb(53, 53, 53);
+  color: rgb(255, 255, 255);
+
+}

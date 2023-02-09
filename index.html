@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Battle Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col s12 m6 center-align" id="opponent">
+                <div class="row header">
+                    <h1>Opponent</h1>
+                </div>
+                <div class="row customRow"></div>
+                <div class="row customRow">
+                    <form class="input-field col s12 m4 offset-m4" id="form">
+                        <input type="text" class="autocomplete white-text" id="pokemon-input">
+                        <label for="autocomplete">Pokémon</label>
+                        <input class="btn" type="submit">
+                    </form>
+                </div>
+                <div class="col s12 m4 offset-m4" id="pokemon1">
+                    <img id="pokeImage1" class="responsive-img" src="" alt="">
+                </div>
+
+                <div class="row customRow"></div>
+                <div class="col s12 m6 offset-m3 card" id="info1">
+                    <div class="card-content black-text flow-text">
+                        <span id="pokeName1" class="card-title">Name</span>
+                        <p id="pokeType1">Type</p>
+                        <p>Weak Against: </p>
+                        <ul id="weaknessList"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 center-align" id="trainer">
+                <div class="row header">
+                    <h1>Trainer</h1>
+                </div>
+                <div class="row customRow"></div>
+                <div class="row customRow"></div>
+                <div class="col s12 m4 offset-m4" id="pokemon2">
+                    <img id="pokeImage2" class="responsive-img" src="" alt="">
+                </div>
+                <div class="row customRow"></div>
+                <div class="col s12 m6 offset-m3 card" id="info2">
+                    <div class="card-content black-text flow-text">
+                        <span class="card-title" id="shout"></span>
+                        <p id="pokeName2"></p>
+                        <p id="pokeType2"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="modal">
+                <div class="col s12 center-align">
+                    <h1>In Fond Memories of Ash Ketchum and Pikachu</h1>
+                </div>
+                <!--     <div class="audio-container">
+                        <audio controls autoplay>
+                            <source src="./assets/sound/Pokemon.ogg" type="audio/mpeg"/>
+                        </audio>
+                    </div> -->
+                <div class="row" id="history">
+                    <div class="center-align" id="pokemonBtns"></div>
+                </div>
+                <div class="row">
+                    <!-- EXAMPLE HOW VIDEO CONTAINER WORKS -->
+                    <div class="video-container">
+                        <div id="videos"></div>
+                    </div>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <h4>Welcome to Pokémon Battle!
+                            <i class="material-icons right modal-close">X</i>
+                        </h4>
+                        <h5>We created this tool for people who are new to the world of Pokémon!</h5>
+                        <h5>This tool will allow you to input a Pokémon you need to defeat and our tool will display a randomized option from a pool of effective counter Pokémon.</h5>
+                        <h5>You will then be shown a youtube video showing off the Pokémon you should use.</h5>
+                        <h5>We will also dynamically create buttons saving your searches that you can click to bring up a past video.</h5>
+                        <h5>Currently our tool is available for only Generation 1 (First 151 Pokémon).</h5>
+                        <h5>Enter the Pokémon you need to defeat in the text field to begin!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+
+            // Trigger the first modal
+            instances[0].open();
+        });
+    </script>
+    <!-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
