@@ -15,9 +15,9 @@ request.
 
 ## User Story:
 ```
-AS a Pokémon fan 
-I WANT to know information about a Pokémon and the best adversary 
-SO I can win the battle.
+As a Pokémon Gamer
+I want to know the name and type of Pokémon I am battling
+So that I know which countertype Pokémon I can use
 ```
 
 ## Technologies Used:
