@@ -14,7 +14,7 @@ Nonetheless, a clip will be at the bottom of the screen to support the
 request.
 
 ## User Story:
-```md
+```
 AS a Pokémon fan 
 I WANT to know information about a Pokémon and the best adversary 
 SO I can win the battle.
@@ -30,18 +30,15 @@ YouTube Data API v3: https://developers.google.com/youtube/v3/docs/search
 
 ## Acceptance Criteria:
 ```md
-I WANT to be able to search for a Pokémon.
-GIVEN that the Pokémon is generated
-I WANT to be able to write the first 3 letters.
-GIVEN that auto-completion will help me find the Pokémon of my choice. 
-I WANT to click submit 
-GIVEN I am presented with the Pokémon of my choice, name, type, 
-weaknesses and a few adversaries.
-I WANT to be able to refer back to the search I initiated.
-GIVEN as I click on the button
-WHEN I scroll down the page 
-THEN I am shown a clip of a battle between the Pokémon of my choice and 
-the adversary.
+GIVEN a Pokemon Counter Generator with a Modal to explain functionality
+WHEN I write the first 3 letters of a Pokemon.
+THEN auto-completion will help me find the Pokémon of my choice. 
+WHEN I click Submit.
+THEN I am presented with the Pokémon of my choice, name, type, weaknesses and a few adversaries as well as a youtube video.
+WHEN I want to be able to refer back to the search I initiated.
+GIVEN buttons to store history.
+WHEN I click them.
+THEN I am shown the results of previous searches.
 ```
 
 Screenshots
