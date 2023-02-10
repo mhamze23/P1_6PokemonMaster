@@ -8,33 +8,33 @@ To use the Pokémon First Generation Generator, simply enter the name of the des
 
 ## User Story:
 
-* AS a Pokémon Gamer
+* As a Pokémon Gamer
 * I want to know the name and type of Pokémon I am battling
 * So that I know which countertype Pokémon I can use
 
 
 ## Technologies Used:
 
-JQuery
-JavaScript
-HTML
-CSS
-Materialize Framework
-Poke API
-YouTube Data API 
+* JQuery
+* JavaScript
+* HTML
+* CSS
+* Materialize Framework
+* Poke API
+* YouTube Data API 
 
 
 ## Acceptance Criteria:
 
-GIVEN a Pokemon Counter Generator with a Modal to explain functionality
-WHEN I write the first 3 letters of a Pokemon.
-THEN auto-completion will help me find the Pokémon of my choice. 
-WHEN I click Submit.
-THEN I am presented with the Pokémon of my choice, name, type, weaknesses and a few adversaries as well as a youtube video.
-WHEN I want to be able to refer back to the search I initiated.
-GIVEN buttons to store history.
-WHEN I click them.
-THEN I am shown the previous video.
+* GIVEN a Pokemon Counter Generator with a Modal to explain functionality
+* WHEN I write the first 3 letters of a Pokemon.
+* THEN auto-completion will help me find the Pokémon of my choice. 
+* WHEN I click Submit.
+* THEN I am presented with the Pokémon of my choice, name, type, weaknesses and a few adversaries as well as a youtube video.
+* WHEN I want to be able to refer back to the search I initiated.
+* GIVEN buttons to store history.
+* WHEN I click them.
+* THEN I am shown the previous video.
 
 
 ## Screenshots:
