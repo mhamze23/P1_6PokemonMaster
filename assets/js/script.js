@@ -558,7 +558,7 @@ $(function () {
         // this is a quick and dirty way, may be altered in the future
         // the location of the video being display is WIP
         data.items.forEach(item => {
-        video = `<iframe width="1280" height="720" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>          `
+        video = `<iframe width="1280" height="720" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>          `
         // #video class location will be where the iframe is appended 
         $("#videos").append(video)
       });
