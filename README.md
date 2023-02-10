@@ -8,9 +8,9 @@ To use the Pokémon First Generation Generator, simply enter the name of the des
 
 ## User Story:
 
-As a Pokémon Gamer
-I want to know the name and type of Pokémon I am battling
-So that I know which countertype Pokémon I can use
+* AS a Pokémon Gamer
+* I want to know the name and type of Pokémon I am battling
+* So that I know which countertype Pokémon I can use
 
 
 ## Technologies Used:
